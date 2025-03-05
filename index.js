@@ -16,7 +16,7 @@ pincodeSearchBtn.addEventListener('click', () => {
         return
     }
 
-    fetch(`http://localhost:3009/${pincode}`)
+    fetch(`https://pincode-lookup-backend.vercel.app/${pincode}`)
         .then(response => response.json())
         .then(postOffices => {
             if (Array.isArray(postOffices)) {
