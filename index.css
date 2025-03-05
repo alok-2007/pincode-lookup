@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background-color: #100e2a;
+}
+
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.1);
+}
+
+#pincodeInput {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#pincodeSearchBtn {
+    padding: 10px 15px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+#pincodeSearchBtn:hover {
+    background-color: darkblue;
+}
+
+.post-office {
+    border: 0.5px solid black;
+    margin: 10px;
+
+}
+
+.post-office-header {
+    background-color: rgb(85, 125, 6);
+    color: white;
+    padding: 3px;
+    margin-top: 0px;
+}
