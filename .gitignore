@@ -1,2 +1,2 @@
-# prevent git from taking node_modules
-node_modules/
+# Ignore node_modules inside backend
+backend/node_modules/
