@@ -1,0 +1,2 @@
+# prevent git from taking node_modules
+node_modules/
