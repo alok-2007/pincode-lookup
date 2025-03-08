@@ -16,7 +16,7 @@ pincodeSearchBtn.addEventListener('click', () => {
         return
     }
 
-    fetch(`https://pincode-lookup-backend.vercel.app/${pincode}`)
+    fetch(`https://pincode-lookup-alok-kumars-projects-0395fbc4.vercel.app/${pincode}`)
         .then(response => response.json())
         .then(postOffices => {
             if (Array.isArray(postOffices)) {
