@@ -41,30 +41,34 @@ function searchPincode() {
 
     document.getElementById('loading').style.display = 'block';
     document.getElementById('results-container').style.display = 'none';
-    document.getElementById('no-result').style.display = 'none';
+    document.getElementById('no-results').style.display = 'none';
 
     fetch(`https://pincode-lookup-alok-kumars-projects-0395fbc4.vercel.app/${searchValue}`)
         .then(response => response.json())
         .then(postOffices => {
-            let output = `<h3 class="result-title">Result for Pincode: ${searchValue}</h3>`;
+            let output = `<h3 class="result-title">Result for Pincode: ${searchValue}</h3><div class="result-grid">`;
             postOffices.forEach(office => {
                 output += `
-                    <div class="result-details">
-                        <div>
-                            <p class="detail-item"><span class="detail-label">Pincode: ${searchValue}</span></p>
-                            <p class="detail-item"><span class="detail-label">Post Office: ${office.Name}</span></p>
-                            <p class="detail-item"><span class="detail-label">District: ${office.District}</span></p>
-                        </div>
-                        <div>
-                            <p class="detail-item"><span class="detail-label">State: ${office.State}</span></p>
-                            <p class="detail-item"><span class="detail-label">Division: ${office.Division}</span></p>
-                            <p class="detail-item"><span class="detail-label">Region: ${office.Region}</span></p>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <p>Map view would be displayed here(coming soon😊)!</p>
                     <div>
-                `
+                        <h4>${office.Name}, ${office.District}</h4>
+                        <div class="result-details">
+                            <div>
+                                <p class="detail-item"><span class="detail-label">Pincode: ${searchValue}</span></p>
+                                <p class="detail-item"><span class="detail-label">Post Office: ${office.Name}</span></p>
+                                <p class="detail-item"><span class="detail-label">District: ${office.District}</span></p>
+                            </div>
+                            <div>
+                                <p class="detail-item"><span class="detail-label">State: ${office.State}</span></p>
+                                <p class="detail-item"><span class="detail-label">Division: ${office.Division}</span></p>
+                                <p class="detail-item"><span class="detail-label">Region: ${office.Region}</span></p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <p>Map view would be displayed here(coming soon😊)!</p>
+                        <div>
+                    </div>
+                `;
+                output += `</div>`;
             })
             document.getElementById('loading').style.display = 'none';
             document.getElementById('results-container').style.display = 'block';
@@ -73,8 +77,8 @@ function searchPincode() {
         .catch(error => {
             console.error("Error fetching data:", error);
             document.getElementById('loading').style.display = 'none';
-            document.getElementById('no-result').style.display = 'block';
-            document.getElementById("no-result").innerText = "Failed to fetch data. Please try again.";
+            document.getElementById('no-results').style.display = 'block';
+            document.getElementById("no-results").innerText = "Failed to fetch data. Please try again.";
             alert("Internet issue 😒 Let's give an another shot!");
         });
 
