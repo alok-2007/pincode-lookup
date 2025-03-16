@@ -18,12 +18,85 @@
     <title>Pincode Lookup - Find Post Office Details</title>
 </head>
 <body>
+    <header>
+        <h1>India Pincode Lookup</h1>
+        <p>Find detailed information about any location in India using pincode or address</p>
+    </header>
+
     <div class="container">
-        <h1>Pincode Checker</h1>
-        <input type="text" id="pincodeInput" placeholder="Enter Pincode Here!">
-        <button id="pincodeSearchBtn">Search</button>
-        <div id="result"></div>
+        <div class="search-container">
+            <h2 class="search-heading">Search India Postal Codes</h2>
+
+            <div class="search-options">
+                <button class="search-tab active" onclick="changeTab(this, 'pincode')">Search By Pincode</button>
+                <button class="search-tab" onclick="changeTab(this, 'area')">Search by Area/Locality</button>
+                <button class="search-tab" onclick="changeTab(this, 'district')">Search by District</button>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="search-input" class="search-input" placeholder="Enter 6-digit Pincode" maxlength="6">
+                <button class="search-button" id="search-button">Search</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Searching for result...</p>
+        </div>
+        
+        <div class="no-results" id="no-results" style="display: none;">
+            <h3>No results found</h3>
+            <p>Please try with a different search term or check for typing errors</p>
+        </div>
+
+        <div class="results-container" id="results-container" style="display: none;">
+            <!--<div class="results-heading">
+                <h2>Serach Results</h2>
+                <div class="filters">
+                    <select class="filter-select" id="state-filer">
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="tamil-nadu">Tamil Nadu</option>
+                        <option value="karnataka">Karnataka</option>
+                    </select>
+                    <select id="district-filter" class="filter-select">
+                        <option value="">Filter by District</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="pune">Pune</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="chennai">Chennai</option>
+                    </select>
+                </div>
+            </div>-->
+
+            <div id="results-list">
+                <!-- Results will be populated here -->
+                 <div class="result-card" id="result-card">
+                    <h3 class="result-title">Connaught Place, New Delhi</h3>
+                    <div class="result-details">
+                        <div>
+                            <p class="detail-item"><spam class="detail-label">Pincode:</spam></p>
+                            <p class="detail-item"><spam class="detail-label">Post Office:</spam></p>
+                            <p class="detail-item"><spam class="detail-label">District:</spam></p>
+                        </div>
+                        <div>
+                            <p class="detail-item"><spam class="detail-label">State:</spam></p>
+                            <p class="detail-item"><spam class="detail-label">Division:</spam></p>
+                            <p class="detail-item"><spam class="detail-label">Region:</spam></p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <p>Map view would be displayed here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2025 India Pincode Lookup | Data sourced from India Post</p>
+    </footer>
+    
     <script src="index.js"></script>
 </body>
 </html>
