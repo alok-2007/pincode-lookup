@@ -13,8 +13,11 @@
     <meta property="og:image" content="">
     <meta property="og:url" content="">
 
+    
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <title>Pincode Lookup - Find Post Office Details</title>
 </head>
 <body>
@@ -22,6 +25,11 @@
         <h1>India Pincode Lookup</h1>
         <p>Find detailed information about any location in India using pincode or address</p>
     </header>
+
+    <div id="current-pincode">
+        <p class="search-heading">Click Below For Your Current Location Pincode👇</p>
+        <button id="get-current-location-pincode-btn">My Current Location Pincode</button>
+    </div>
 
     <div class="container">
         <div class="search-container">
@@ -85,7 +93,7 @@
                             <p class="detail-item"><spam class="detail-label">Region:</spam></p>
                         </div>
                     </div>
-                    <div class="map-container">
+                    <div class="map" id="map">
                         <p>Map view would be displayed here</p>
                     </div>
                 </div>
