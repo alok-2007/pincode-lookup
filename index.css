@@ -27,19 +27,57 @@ header {
 }
 
 #current-pincode {
-    margin: 0 auto;
-    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #FF7E5F, #FD3A69);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    margin: 20px auto;
+    animation: pulse 2s infinite;
+}
 
+@keyframes pulse {
+    0% {transform: scale(1); }
+    50% {transform: scale(1.03);}
+    100% {transform: scale(1);}
+}
+
+#get-current-location-pincode-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 15px;
 
 }
 
 #get-current-location-pincode-btn {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--primary);
-    cursor: pointer;
+    
+    background-color: #ffd700;
+    color: #333;
     border: none;
-    transition: all 0.3s;
-    font-weight: 500;
+    font-weight: bold;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, transform 0.3s;
+
+}
+
+#get-current-location-pincode-btn:hover {
+    background-color: #ffc300;
+    transform: scale(1.05);
+}
+
+#get-current-location-pincode-btn:active {
+    background-color: #f57c00;
+    transform: scale(0.98);
 }
 
 .container {

@@ -21,7 +21,7 @@ function showPostition(position) {
             let city = address.city || address.town || address.village || "Unknown";
             let state = address.state || "Unknown";
 
-            document.getElementById("result-card").style.display = "block";
+            document.getElementById('results-container').style.display = 'block';
 
             document.getElementById("result-card").innerHTML = `
                 <div class="result-grid">
